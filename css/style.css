@@ -7,6 +7,7 @@
 :root{
     --main-color: #2196f3;
     --main-color-alt:#1787e0;
+    --main-transition:0.3s;
 }
 html{
     scroll-behavior: smooth;
@@ -51,12 +52,30 @@ a{
 header{
     /* padding-top: 10px;
     padding-bottom: 10px; */
+    -webkit-box-shadow:0 0 10px #ddd;
+    -moz-box-shadow:0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
+  
 }
 header nav .logo a{
     color: var(--main-color);
     font-weight: bold;
     font-size: 26px;
+    display: flex;
+    height: 67.43px;
+    align-items: center;
 }
+/* @media(max-width: 770px){
+    header nav .links ul{
+        display: none;
+    }
+
+    header nav .logo a{
+        display: flex;
+        align-self: center;
+    }
+
+} */
 header .container nav{
     display: flex;
     align-items: center;
@@ -64,39 +83,49 @@ header .container nav{
 }
 header nav .links ul{
     display: flex;
+    position: relative;
+
+}
+header nav .links> ul > li > a::before{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);      
+}
+header nav .links> ul > li > a{
+    padding: 0 30px;
+    display: flex;
+    transition: 0.3s;
+    color: black;
     align-items: center;
     justify-content: space-betweens;
     font-size: 20px;
     font-weight: normal;
     position: relative;
     height: 67.43px;
+    overflow: hidden;
 
 }
-header nav .links ul::before li{
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    color: var(--main-color);
-}
-header nav .links ul li a{
-    margin:0 30px;
-    transition: 0.3s;
-    color: black;
-}
+
 header nav .links ul li:hover a{
     color: var(--main-color-alt); 
-       
 }
-header nav .links ul .mega:hover{
-    .mega-links{
+header nav .links ul li a:hover::before{
+    left: 0;
+}
+
+header nav .links ul .mega :hover header .mega-links{
         display: block;
-    }
 }
 .mega-links{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    display: none;
+    /* display: none; */
 }
 .mega-links ul{
     color: var(--main-color);
@@ -108,7 +137,5 @@ header nav .links ul .mega:hover{
     cursor: pointer;
     font-weight: bold;
     font-size: 20px;
-
-
 }
 
