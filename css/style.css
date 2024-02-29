@@ -3,6 +3,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    overflow: hidden;
 }
 :root{
     --main-color: #2196f3;
@@ -50,12 +51,12 @@ a{
 /* end global rules */
 /* header */
 header{
-    /* padding-top: 10px;
-    padding-bottom: 10px; */
     -webkit-box-shadow:0 0 10px #ddd;
     -moz-box-shadow:0 0 10px #ddd;
     box-shadow: 0 0 10px #ddd;
-  
+}
+header .container{
+    z-index: 2;
 }
 header nav .logo a{
     color: var(--main-color);
@@ -64,22 +65,26 @@ header nav .logo a{
     display: flex;
     height: 67.43px;
     align-items: center;
+    justify-content: center;
 }
-/* @media(max-width: 770px){
-    header nav .links ul{
-        display: none;
+@media(max-width: 767px){
+    header nav .logo {
+        width: 100%;
+        height: 50;
     }
 
-    header nav .logo a{
-        display: flex;
-        align-self: center;
-    }
-
-} */
+}
 header .container nav{
     display: flex;
     align-items: center;
     justify-content:space-between;
+    flex-wrap: wrap;
+
+}
+@media(max-width: 767px){
+    header .container nav{
+        margin: auto;
+    }
 }
 header nav .links ul{
     display: flex;
@@ -108,7 +113,13 @@ header nav .links> ul > li > a{
     position: relative;
     height: 67.43px;
     overflow: hidden;
-
+}
+@media(max-width: 767px){
+    header nav .links> ul > li > a{
+    padding: 10px;
+    font-size: 14px;
+    height: 40px;
+    }
 }
 
 header nav .links ul li:hover a{
@@ -118,14 +129,16 @@ header nav .links ul li a:hover::before{
     left: 0;
 }
 
-header nav .links ul .mega :hover header .mega-links{
+header nav .links ul li a .mega:hover{
+    .mega-links{
         display: block;
+    }
 }
 .mega-links{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* display: none; */
+    display: none;
 }
 .mega-links ul{
     color: var(--main-color);
@@ -139,3 +152,40 @@ header nav .links ul .mega :hover header .mega-links{
     font-size: 20px;
 }
 
+/* start landing */
+.landing{
+    position: relative;
+}
+.landing::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ECECEC;
+    transform: skewY(-9deg);
+    z-index: -1;
+    transform-origin: top left;
+}
+.landing .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100vH - 67.43PX);
+}
+.landing-text{
+}
+.landing-text h1{
+    font-size: 50px;
+    margin: 0;
+}
+.landing-text p{
+    color: #777;
+    line-height: 2;
+    font-size: 25px;
+    margin: 0;
+}
+.landing-img img{
+    max-width: 50%;
+    height: auto;
+}
