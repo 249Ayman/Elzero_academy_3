@@ -109,7 +109,7 @@ header nav .links> ul > li > a{
     transition: 0.3s;
     color: black;
     align-items: center;
-    justify-content: space-betweens;
+    justify-content: space-between;
     font-size: 20px;
     font-weight: normal;
     position: relative;
@@ -136,11 +136,26 @@ header nav .links ul li a .mega:hover{
         display: block;
     }
 }
-.mega-links{
+.container .mega-links{
+    position: absolute;
+    left: 0;
+    padding: 30px;
+    background: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    display: none;
+    gap: 40px;
+    top: 100px;
+    border-bottom: 3px solid var(--main-color);
+    z-index: 100;
+    /* display: none; */
+}
+@media(max-width:991px){
+    .mega-links img {
+        display: none;
+    }
+}
+.mega-links img{
+    max-width: 100%;
 }
 .mega-links ul{
     color: var(--main-color);
@@ -152,12 +167,14 @@ header nav .links ul li a .mega:hover{
     cursor: pointer;
     font-weight: bold;
     font-size: 20px;
+    color: var(--main-color-alt);
 }
 
 /* start landing */
 .landing{
     position: relative;
     overflow: hidden;
+    /* display: none; */
 }
 .landing::before{
     content: '';
@@ -223,6 +240,7 @@ header nav .links ul li a .mega:hover{
     color: var(--main-color);
     animation: buls 1.5s infinite;
 }
+/* end landing */
 /* start animation */
 @keyframes up-and-down {
     0%, 100%{
