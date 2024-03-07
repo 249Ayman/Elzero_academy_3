@@ -56,6 +56,7 @@ header{
 }
 header .container{
     z-index: 2;
+    position: relative;
 }
 header nav .logo a{
     color: var(--main-color);
@@ -136,38 +137,51 @@ header nav .links ul li a .mega:hover{
         display: block;
     }
 }
-.container .mega-links{
+header .mega-links{
     position: absolute;
+    width: 100%;
     left: 0;
-    padding: 30px;
+    top: calc(100% + 50px);
+    padding: 40px;
     background: white;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    top: 100px;
-    border-bottom: 3px solid var(--main-color);
     z-index: 100;
-    /* display: none; */
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 3px solid var(--main-color);
+    transition: top var(--main-transition), opacity var(--main-transition);
+}
+@media (max-width:776px) {
+    header .mega-links{
+        display: block;
+        top: 100px;
+        padding-bottom: 0;
+    }
+}
+.mega-links img{
+    max-width: 100%;
 }
 @media(max-width:991px){
     .mega-links img {
         display: none;
     }
 }
-.mega-links img{
-    max-width: 100%;
-}
 .mega-links ul{
     color: var(--main-color);
 }
 .mega-links ul li{
+    display: flex;
+    gap: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid black;
-    border-width: 100%;
-    cursor: pointer;
+    font-size: 18px;
     font-weight: bold;
-    font-size: 20px;
-    color: var(--main-color-alt);
+    border-bottom: 0.5px solid #ddd;
+    padding-right: 100px;
+    padding-bottom: 11px;
+}
+@media (max-width:776px) {
+    header .mega-links ul li{
+        padding-bottom: 5px;
+    }
 }
 
 /* start landing */
