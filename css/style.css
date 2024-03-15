@@ -58,7 +58,7 @@ header .container{
     z-index: 2;
     position: relative;
 }
-header nav .logo a{
+header .logo a{
     color: var(--main-color);
     font-weight: bold;
     font-size: 26px;
@@ -67,14 +67,16 @@ header nav .logo a{
     align-items: center;
     justify-content: center;
 }
+
+
 @media(max-width: 767px){
-    header nav .logo {
+    header .logo {
         width: 100%;
         height: 50;
     }
 
 }
-header .container nav{
+header .container{
     display: flex;
     align-items: center;
     justify-content:space-between;
@@ -82,19 +84,19 @@ header .container nav{
 
 }
 @media(max-width: 767px){
-    header .container nav{
+    header .container{
         margin: auto;
     }
     header .container .links ul li{
         text-align: center;
     }
 }
-header nav .links ul{
+header .links ul{
     display: flex;
     position: relative;
 
 }
-header nav .links> ul > li > a::before{
+header .links> ul > li > a::before{
     content: '';
     position: absolute;
     height: 4px;
@@ -104,7 +106,7 @@ header nav .links> ul > li > a::before{
     left: -100%;
     transition: var(--main-transition);      
 }
-header nav .links> ul > li > a{
+header .links> ul > li > a{
     padding: 0 30px;
     display: flex;
     transition: 0.3s;
@@ -118,24 +120,27 @@ header nav .links> ul > li > a{
     overflow: hidden;
 }
 @media(max-width: 767px){
-    header nav .links> ul > li > a{
+    header .links> ul > li > a{
     padding: 10px;
     font-size: 14px;
     height: 40px;
     }
 }
 
-header nav .links ul li:hover a{
+header .links ul li:hover a{
     color: var(--main-color-alt); 
 }
-header nav .links ul li a:hover::before{
+header .links ul li a:hover::before{
     left: 0;
 }
-
-header nav .links ul li a .mega:hover{
-    .mega-links{
-        display: block;
-    }
+.test:hover .logo{
+    color: green;
+}
+.links .hover-links li .mega:hover header .logo a{
+    /* opacity: 1 !important;
+    top: 100% !important;
+    z-index: 100 !important; */
+    color: green;
 }
 header .mega-links{
     position: absolute;
@@ -144,16 +149,16 @@ header .mega-links{
     top: calc(100% + 50px);
     padding: 40px;
     background: white;
-    z-index: 100;
+    z-index: -1;
     display: flex;
     justify-content: space-around;
     border-bottom: 3px solid var(--main-color);
+    opacity: 0;
     transition: top var(--main-transition), opacity var(--main-transition);
 }
 @media (max-width:776px) {
     header .mega-links{
-        display: block;
-        top: 100px;
+        flex-direction: column;
         padding-bottom: 0;
     }
 }
@@ -167,6 +172,7 @@ header .mega-links{
 }
 .mega-links ul{
     color: var(--main-color);
+    min-width: 268px;
 }
 .mega-links ul li{
     display: flex;
