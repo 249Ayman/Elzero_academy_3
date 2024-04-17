@@ -381,7 +381,7 @@ color: var(--main-color);
     overflow: hidden;
     transition: 0.3s;
 }
-.gallary-card .gallary-img:hover{
+.gallary-card .gallary-img img:hover{
     transform: rotate(5deg) scale(1.1);
 }
 .gallary-card .gallary-img::before{
@@ -400,7 +400,7 @@ color: var(--main-color);
 .gallary-card img{
     width: 100%;
     transition: transform var(--main-transition), ease-in-out;
-    transition: 0,3s;
+    transition: 0.3s;
 }
 /* start animation */
 @keyframes up-and-down {
