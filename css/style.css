@@ -10,6 +10,7 @@
     --main-transition:0.3s;
     --padding-top:100px;
     --padding-bottom:100px;
+    --main-background:#ececec;
 }
 html{
     scroll-behavior: smooth;
@@ -615,6 +616,172 @@ color: var(--main-color);
 .team .box .text p{
 
 }
+/* end team */
+/* start services */
+.services{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    background: var(--main-background);
+}
+.services .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.services .container .box{
+    background: white;
+    text-align: center;
+    box-shadow:   0 3px 10px rgb(0 0 0 / 0.2);
+    transition: var(--main-transition);
+    counter-increment: serv;
+    position: relative;
+}
+.services .container .box::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: -3px;
+    transform: translatex(-50%);
+    height: 3px;
+    width: 0;
+    background: var(--main-color);
+    transition: var(--main-transition);
+}
+.services .container .box:hover::before{
+    width: 100%;
+}
+.services .container .box:hover{
+    transform: translateY(-10px);
+}
+.services .container .box i{
+    padding-top: 20px;
+}
+.services .container .box .flex{
+    position: relative;
+    background: #f9f9f9;
+    text-align: right;
+    padding: 20px;
+}
+.services .box i{
+    color: #d5d5d5;
+}
+.services .box .title {
+    color: var(--main-color);
+}
+.services .box .flex::before{
+    position: absolute;
+    content: "0" counter(serv);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    background: var(--main-color);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+.services .box .flex::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 50px;
+    height: 100%;
+    background: #d5d5d5;
+    transform: skewX(-30deg);
+}
+.services .box .flex a{
+    color: var(--main-color);
+}
+/* end servics */
+/* start skills */
+.skills{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+.skills .container{
+    display: flex;
+    gap: 40px;    
+}
+.skills img{
+}
+@media(max-width:991px){
+    .skills img{
+        display: none;
+    }
+}
+.skills .skill{
+    flex: 1;
+}
+.skills .skill h3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skills .skill h3 span{
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 15%;
+    padding: 3px 5px;
+    color: var(--main-color);
+}
+
+.skills .skill .box .progress{
+    position: relative;
+    height: 30px;
+    background-color: #eee;
+}
+.skills .skill .box .progress span{
+    position: absolute;
+    height: 30px;
+    background-color: var(--main-color);
+}
+/* end skills */
+/* start works */
+.works{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    background: var(--main-background);
+}
+.works .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.works .container .work-img{
+    width: 40%;
+}
+.works .work-box{
+
+}
+.works .work-box .box{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    background-color: #f6f5f5;
+    border: 2px solid white;
+    border-radius: 3%;
+    padding: 20px;
+    gap: 30px;
+}
+.works .work-box .box:not(:last-child){
+    margin-bottom: 30px;
+
+}
+.works .work-box .box img{
+    width: 50px;
+}
+.works .work-box .box h2{
+
+}
+.works .work-box .box p{
+
+}
+
 /* start animation */
 @keyframes up-and-down {
     0%, 100%{
