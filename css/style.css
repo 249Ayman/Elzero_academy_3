@@ -755,13 +755,18 @@ color: var(--main-color);
 .works .container .work-img{
     width: 40%;
 }
+@media (max-width:991px) {
+    .works img{
+        display: none;
+    }    
+}
 .works .work-box{
 
 }
 .works .work-box .box{
     display: flex;
     align-items: center;
-    width: 500px;
+    max-width: 450px;
     background-color: #f6f5f5;
     border: 2px solid white;
     border-radius: 3%;
@@ -786,38 +791,100 @@ color: var(--main-color);
 .event{
     padding-top: var(--padding-top);
     padding-bottom: var(--padding-bottom);
+    position: relative;
 }
 .event .container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.event img{
+    max-width: 450px;
+}
+@media(max-width:991px){
+    .event img{
+        display: none;
+    }
+}
+.event .info{
+    flex: 1;
 
 }
-.event .container img{
-    width: 40%;
-}
-.event .flex{
+.event .info .time{
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
 }
-.event .flex .text{
-    display: flex;
-    gap: 40px;
-    padding-right: 80px;
-}
-.event .flex .text .hours{
-    height: fit-content;
-    border: 1px solid black;
+.event .info .time .unit{
+    border: 1px solid #d4d4d4;
     border-radius: 5%;
+    text-align: center;
+    transition: var(--main-transition);
 }
-.event .flex .text .hours h2{
-    border-bottom: 1px solid black;
+.event .info .time .unit:hover, .event .info .time .unit:hover span:last-child { 
+    border-color: var(--main-color);
+}
+.event .info .time .unit span{
+    display: block;
+}
+.event .info .time .unit span:first-child{
+    padding: 50px 5px 25px;
+    font-size: 35px;
+    text-align: center;
     color: var(--main-color);
-    font-size: 40px;
-    margin-bottom: 0;
+    font-weight: bold;
+}
+.event .info .time .unit span:last-child{
+    border-top: 1px solid #d4d4d4;
+    padding: 15px;
+    transition: var(--main-transition);
+}
+.event .title{
+    text-align: center;
+    font-size: 30px;
+}
+.event p{
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #777;
+}
+.event .subscribe{
+    width: 100%;
     text-align: center;
 }
-.event .flex .text .hours p{
-    margin: 0;
-    padding: 5px;
-    text-align: center;
+.event .subscribe form{
+    background: #f6f5f5;
+    width: 600px;
+    margin: 60px auto;
+    padding: 30px 40px;
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+}
+.event .subscribe form input[type="email"]{
+    border-radius: 50px;
+    border: 0px;
+    flex: 1;
+    padding: 20px;
+    caret-color: var(--main-color);
+}
+.event .subscribe form input[type="email"]:focus{
+    outline: none;
+}
+.event .subscribe form input[type="email"]::placeholder{
+    transition: opacity var(--main-transition);
+}
+.event .subscribe form input[type="email"]:focus::placeholder{
+    opacity: 0;
+}
+.event .subscribe form input[type="submit"]{
+    border-radius: 50px;
+    border: 0;
+    background: var(--main-color);
+    padding: 18px;
+    color: white;
 }
 
 /* start animation */
