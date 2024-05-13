@@ -96,6 +96,33 @@ a{
     z-index: -1;
     animation: right-fill linear 0.5s forwards;
 }
+.spikes{
+    position: relative;
+}
+.spikes::after{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    background: linear-gradient(133deg, white 25%, transparent 25%), linear-gradient(228deg, white 25%, transparent 25%);
+    background-size: 30px 30px;
+}
+.dots{
+    background-image: url(/Img/dots.png);
+    height: 186px;
+    width: 204px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.dots-up{
+    top: 200px;
+    right: 0;
+}
+.dots-down{
+    bottom: 200px;
+    left: 0;
+}
+
 /* end global rules */
 /* header */
 header{
@@ -854,6 +881,12 @@ color: var(--main-color);
     width: 100%;
     text-align: center;
 }
+@media (max-width:767px) {
+    .event .subscribe form{
+        display: none;
+    }
+    
+}
 .event .subscribe form{
     background: #f6f5f5;
     max-width: 600px;
@@ -893,6 +926,7 @@ color: var(--main-color);
     padding-top: var(--padding-top);
     padding-bottom: var(--padding-bottom);
     background: var(--main-background);
+    position: relative;
 }
 .pricing .container{
     display: flex;
@@ -902,6 +936,7 @@ color: var(--main-color);
 .pricing .box{
     background: white;
     box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    z-index: 3;
 }
 @media(max-width:991px){
     .pricing .container{
@@ -1259,7 +1294,11 @@ color: var(--main-color);
     color: var(--main-color);
     font-size: 20px;
 }
-.footer .img{
+@media(max-width:767px){
+    .footer .img{
+        display: none;
+    }
+
 }
 .footer .img img{
     max-width: 80px;
