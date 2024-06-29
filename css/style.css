@@ -204,6 +204,9 @@ header .links ul li:hover a{
 header .links ul li a:hover::before{
     left: 0;
 }
+header .hide{
+    display: none;
+}
 header .mega-links{
     position: absolute;
     width: 100%;
@@ -215,8 +218,8 @@ header .mega-links{
     display: flex;
     justify-content: space-around;
     border-bottom: 3px solid var(--main-color);
-    opacity: 0;
-    transition: top var(--main-transition), opacity var(--main-transition);
+    opacity: 1;
+    transition: .3s;
 }
 @media (max-width:776px) {
     header .mega-links{
