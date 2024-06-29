@@ -1,3 +1,5 @@
-let megaButton= document.getElementsByClassName("mega").addEventListener("click", function(){
-    console.log("hi")
-})
+let btn= document.getElementById("btn")
+
+btn.onclick= function() {
+    let mega=document.getElementById("mega-links").style.opacity="1"
+}

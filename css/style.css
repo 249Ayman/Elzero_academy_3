@@ -178,7 +178,7 @@ header .links> ul > li > a::before{
     left: -100%;
     transition: var(--main-transition);      
 }
-header .links> ul > li > a{
+header .links> ul > li{
     padding: 0 30px;
     display: flex;
     transition: 0.3s;
@@ -192,7 +192,7 @@ header .links> ul > li > a{
     overflow: hidden;
 }
 @media(max-width: 767px){
-    header .links> ul > li > a{
+    header .links> ul > li{
     padding: 10px;
     font-size: 14px;
     height: 40px;
@@ -203,15 +203,6 @@ header .links ul li:hover a{
 }
 header .links ul li a:hover::before{
     left: 0;
-}
-.test:hover .logo{
-    color: green;
-}
-.links .hover-links li .mega:hover header .logo a{
-    /* opacity: 1 !important;
-    top: 100% !important;
-    z-index: 100 !important; */
-    color: green;
 }
 header .mega-links{
     position: absolute;
@@ -224,7 +215,7 @@ header .mega-links{
     display: flex;
     justify-content: space-around;
     border-bottom: 3px solid var(--main-color);
-    opacity: 1;
+    opacity: 0;
     transition: top var(--main-transition), opacity var(--main-transition);
 }
 @media (max-width:776px) {
