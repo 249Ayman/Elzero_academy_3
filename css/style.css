@@ -224,7 +224,7 @@ header .mega-links{
     display: flex;
     justify-content: space-around;
     border-bottom: 3px solid var(--main-color);
-    opacity: 0;
+    opacity: 1;
     transition: top var(--main-transition), opacity var(--main-transition);
 }
 @media (max-width:776px) {
