@@ -1052,7 +1052,7 @@ color: var(--main-color);
 .stats{
     padding-top: var(--padding-top);
     padding-bottom: var(--padding-bottom);
-    background-image: url(/Img/stats.jpg);
+    background-image: url(Img/stats.jpg);
     background-size: cover;
     position: relative;
 }
